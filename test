@@ -47,3 +47,24 @@ fi
 # Abrir una nueva terminal y ejecutar npm start en el frontend
 osascript -e "tell application \"Terminal\" to do script \"cd '$FRONTEND_PATH' && npm start\""
 
+
+
+
+
+
+
+#!/bin/bash
+
+# Definir la ruta absoluta del backend
+BACKEND_PATH="$HOME/Downloads/Evento/backend"
+
+# Asegurar que la carpeta exista
+if [ ! -d "$BACKEND_PATH" ]; then
+    echo "Error: La carpeta '$BACKEND_PATH' no existe."
+    exit 1
+fi
+
+# Abrir una nueva terminal y ejecutar node server.js en el backend
+osascript -e "tell application \"Terminal\" to do script \"cd '$BACKEND_PATH' && node server.js\""
+
+
