@@ -31,3 +31,19 @@ osascript -e "tell application \"Terminal\" to do script \"cd \"$BASE/backend\" 
 # Abrir la segunda terminal y ejecutar el frontend
 osascript -e "tell application \"Terminal\" to do script \"cd \"$BASE/frontend\" && pwd && npm start\""
 
+
+
+#!/bin/bash
+
+# Definir la ruta absoluta del frontend
+FRONTEND_PATH="$HOME/Downloads/Evento/frontend"
+
+# Asegurar que la carpeta exista
+if [ ! -d "$FRONTEND_PATH" ]; then
+    echo "Error: La carpeta '$FRONTEND_PATH' no existe."
+    exit 1
+fi
+
+# Abrir una nueva terminal y ejecutar npm start en el frontend
+osascript -e "tell application \"Terminal\" to do script \"cd '$FRONTEND_PATH' && npm start\""
+
