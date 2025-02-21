@@ -10,3 +10,5 @@ osascript -e "tell application \"Terminal\" to do script \"cd '$BASE/backend' &&
 osascript -e "tell application \"Terminal\" to do script \"cd '$BASE/frontend' && npm start\""
 
 xattr -d com.apple.quarantine ~/Desktop/iniciar_eventos.command
+
+chmod +x ~/Desktop/iniciar_eventos.command
