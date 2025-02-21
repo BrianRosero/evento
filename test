@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Ruta base
+BASE="$HOME/Descargas/Eventos"
+
+# Abrir primera terminal y ejecutar el backend
+osascript -e "tell application \"Terminal\" to do script \"cd '$BASE/backend' && node server.js\""
+
+# Abrir segunda terminal y ejecutar el frontend
+osascript -e "tell application \"Terminal\" to do script \"cd '$BASE/frontend' && npm start\""
+
