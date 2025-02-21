@@ -12,3 +12,22 @@ osascript -e "tell application \"Terminal\" to do script \"cd '$BASE/frontend' &
 xattr -d com.apple.quarantine ~/Desktop/iniciar_eventos.command
 
 chmod +x ~/Desktop/iniciar_eventos.command
+
+
+#!/bin/bash
+
+# Definir la ruta absoluta de la carpeta Evento
+BASE="$HOME/Downloads/Evento"
+
+# Asegurar que la carpeta exista
+if [ ! -d "$BASE" ]; then
+    echo "Error: La carpeta '$BASE' no existe."
+    exit 1
+fi
+
+# Abrir la primera terminal y ejecutar el backend
+osascript -e "tell application \"Terminal\" to do script \"cd \"$BASE/backend\" && pwd && node server.js\""
+
+# Abrir la segunda terminal y ejecutar el frontend
+osascript -e "tell application \"Terminal\" to do script \"cd \"$BASE/frontend\" && pwd && npm start\""
+
